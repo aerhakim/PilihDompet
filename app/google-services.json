@@ -1,0 +1,121 @@
+{
+  "project_info": {
+    "project_number": "911281721509",
+    "project_id": "test-7b43b",
+    "storage_bucket": "test-7b43b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911281721509:android:1b419ad384cfc6e39f3d4c",
+        "android_client_info": {
+          "package_name": "io.github.aerhakim.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911281721509-f4vukfqdbe4ifmmr5cf7bpfvi10t6oqg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.github.aerhakim.myapplication",
+            "certificate_hash": "fe206af7f0689da44ed34c8a477bac4cffcc4a35"
+          }
+        },
+        {
+          "client_id": "911281721509-q07gi6m98q0sacuskrlsdtkqvjp3ljj0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdxCA8yqze9c92cd13944ZQPD0Lx_leKY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911281721509-q07gi6m98q0sacuskrlsdtkqvjp3ljj0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911281721509:android:af58ff61b1236cdf9f3d4c",
+        "android_client_info": {
+          "package_name": "io.github.aerhakim.pilihdompet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911281721509-p3uqfl0rvs7vbnphtnv6bpr7u6r541u9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.github.aerhakim.pilihdompet",
+            "certificate_hash": "fe206af7f0689da44ed34c8a477bac4cffcc4a35"
+          }
+        },
+        {
+          "client_id": "911281721509-q07gi6m98q0sacuskrlsdtkqvjp3ljj0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdxCA8yqze9c92cd13944ZQPD0Lx_leKY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911281721509-q07gi6m98q0sacuskrlsdtkqvjp3ljj0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911281721509:android:c6a279d5b4629bb49f3d4c",
+        "android_client_info": {
+          "package_name": "io.github.aerhakim.pilihdompetapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911281721509-1b578sn557j4t0he9mahojv7afpea174.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.github.aerhakim.pilihdompetapp",
+            "certificate_hash": "fe206af7f0689da44ed34c8a477bac4cffcc4a35"
+          }
+        },
+        {
+          "client_id": "911281721509-q07gi6m98q0sacuskrlsdtkqvjp3ljj0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdxCA8yqze9c92cd13944ZQPD0Lx_leKY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911281721509-q07gi6m98q0sacuskrlsdtkqvjp3ljj0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

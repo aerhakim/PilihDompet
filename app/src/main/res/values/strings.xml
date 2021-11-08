@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Pilih Dompet</string>
+
+    <!--Titles-->
+    <string name="first_slide_title">E-Wallet Pilihan Kamu</string>
+    <string name="second_slide_title">Fee Yang Murah</string>
+    <string name="third_slide_title">UI Elegant and UI Ngebut</string>
+    <string name="fourth_slide_title">Mulai Aja Dulu</string>
+    <!--Descriptions-->
+    <string name="first_slide_desc">Di sini kalian bisa mendapatkan informasi mengenai sejumlah E-Wallet di Indonesia, Kamu bisa membandingkan layanan mereka di sini</string>
+    <string name="second_slide_desc">Kami menyediakan informasi mengenai fee transaksi beberapa E-Wallet, Kamu bisa memilih yang murah abis atau murah berkualitas.</string>
+    <string name="third_slide_desc">Dari banyaknya E-Wallet mungkin tidak semuanya sesuai dengan performa Handphone kamu, di sini kamu bisa mengetahui E-Wallet apa saja yang cocok dengan Smartphone kamu.</string>
+    <string name="fourth_slide_desc">Daftar sekarang dan ikut berkontribusi dalam pemilihan E-Wallet user lain, di sini komentar anda mengenai E-Wallet sangat dibutuhkan. </string>
+    <!--Buttons-->
+    <string name="skip_btn">Skip</string>
+    <string name="next_btn">Next</string>
+    <string name="let_get_started">Lets Get Started</string>
+    <!--GILROY-->
+    <string name="font_regular">fonts/Poppins-Regular.ttf</string>
+    <string name="font_medium">fonts/Poppins-Medium.ttf</string>
+    <string name="font_bold">fonts/Poppins-Bold.ttf</string>
+    <string name="font_black">fonts/Poppins-Black.ttf</string>
+    <string name="font_thin">fonts/Poppins-SemiBold.ttf</string>
+    <string name="font_light">fonts/Poppins-Light.ttf</string>
+    <string name="font_italic">fonts/Poppins-ExtraBold.ttf</string>
+
+
+    <string name="action_sign_in_short">REGISTER</string>
+    <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
+    <string name="auth_failed">Authentication failed, check your email and password or sign up</string>
+    <string name="change_email">Change Email</string>
+    <string name="change_password">Change Password</string>
+    <string name="send_password_reset_email">Send Password reset email</string>
+    <string name="remove_user">Remove user</string>
+    <string name="new_pass">New Password</string>
+    <string name="mobile_phone">Mobile Phone</string>
+    <string name="title_activity_login">Sign In</string>
+    <string name="title_activity_signup">Sign Up</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Fullname</string>
+    <string name="btn_login">Sign In</string>
+    <string name="i_accept_the_terms_amp_conditions"><![CDATA[I accept the terms & conditions]]></string>
+    <string name="btn_link_to_login">Already registered? Login Now!</string>
+    <string name="title_activity_reset_password">ResetPasswordActivity</string>
+    <string name="btn_forgot_password">Forgot your password?</string>
+    <string name="btn_reset_password">RESET PASSWORD</string>
+    <string name="btn_back"><![CDATA[<< Back]]></string>
+    <string name="hint_new_email">New Email</string>
+    <string name="btn_change">Change</string>
+    <string name="btn_send">Send</string>
+    <string name="btn_remove">Remove</string>
+    <string name="btn_sign_out">Sign Out</string>
+    <string name="or">---------- OR ----------</string>
+    <string name="submit">Submit</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="enter_your_registered_email">Enter your registered email address below. We will <br> </br> send new password in your email.</string>
+    <string name="skip_amp_continue"><![CDATA[Skip & Continue]]></string>
+    <string name="sign_up_btn">Sign Up</string>
+    <string name="lbl_forgot_password">Forgot password?</string>
+    <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
+    <string name="settings_name">Account Settings</string>
+
+
+</resources>
