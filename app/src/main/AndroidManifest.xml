@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="io.github.aerhakim.pilihdompet">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_icon"
@@ -10,10 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PilihDompet">
         <activity
-            android:name=".activity.AccountSettingActivity"
+            android:name=".user.UserProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.ResetPasswordActivity"
+            android:name=".activity.SettingActivity"
             android:exported="false" />
         <activity
             android:name=".activity.SignUpActivity"
@@ -22,7 +26,19 @@
             android:name=".activity.LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".activity.ObatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.EditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.InsertActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.LayoutHome"
             android:exported="false" />
         <activity
             android:name=".activity.SplashScreenActivity"

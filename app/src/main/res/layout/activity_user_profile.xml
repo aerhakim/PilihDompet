@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:id="@+id/rlEditProfile">
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_minus1sdp"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/ic_back" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            android:layout_centerInParent="true"
+            fontPath="@string/font_thin"
+            android:text="Edit Profile"
+            tools:ignore="MissingPrefix" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/rlEditProfile"
+        >
+        <RelativeLayout
+            android:layout_width="@dimen/_95sdp"
+            android:layout_height="@dimen/_95sdp"
+            android:layout_marginTop="@dimen/_45sdp"
+            android:layout_gravity="center_horizontal">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/profileImageView"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_user_account"
+                app:riv_oval="true" />
+            <ImageView
+                android:id="@+id/ivGalery"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:adjustViewBounds="true"
+                android:padding="@dimen/_8sdp"
+                android:background="@drawable/bg_corner"
+                android:src="@drawable/ic_camera"
+                app:tint="@color/white" />
+        </RelativeLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/bg_onlycorner_gary"
+            android:id="@+id/profileFullName"
+            fontPath="@string/font_medium"
+            android:textColor="@color/black"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="1dp"
+            android:hint="Full Name"
+            android:textSize="@dimen/_12ssp"
+            android:textAlignment="viewStart"
+            android:gravity="start|center_vertical"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+
+            tools:ignore="MissingPrefix" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/bg_onlycorner_gary"
+            android:id="@+id/profileEmailAddress"
+            fontPath="@string/font_medium"
+            android:textColor="@color/black"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="1dp"
+            android:hint="Email Address"
+            android:textSize="@dimen/_12ssp"
+            android:textAlignment="viewStart"
+            android:gravity="start|center_vertical"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginBottom="@dimen/_7sdp"
+            tools:ignore="MissingPrefix" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/bg_onlycorner_gary"
+            android:id="@+id/profilePhoneNo"
+            fontPath="@string/font_medium"
+            android:textColor="@color/black"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="1dp"
+            android:hint="Phone Number"
+            android:textSize="@dimen/_12ssp"
+            android:textAlignment="viewStart"
+            android:gravity="start|center_vertical"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            tools:ignore="MissingPrefix" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/saveProfileInfo"
+        fontPath="@string/font_bold"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:background="@drawable/bg_corner"
+        android:backgroundTint="@color/colorPrimary"
+        android:gravity="center"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        tools:ignore="MissingPrefix" />
+</RelativeLayout>

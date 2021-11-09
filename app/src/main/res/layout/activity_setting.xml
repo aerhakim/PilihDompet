@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/btn_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/profileImage"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_user_account"
+                app:riv_oval="true" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/profileImage"
+                android:layout_toRightOf="@+id/profileImage">
+
+                <TextView
+                    android:id="@+id/profileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Nama"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/profileEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/profileName"
+                    android:layout_marginBottom="6dp"
+                    android:text="nama@email.com" />
+                <TextView
+                    android:id="@+id/profilePhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/profileEmail"
+                    android:layout_marginBottom="6dp"
+                    android:text="arhakim.info@gmail.com"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/btn_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mrl_rippleAlpha="0.2"
+        app:mrl_rippleColor="@color/abuabu"
+        app:mrl_rippleHover="true"
+        app:mrl_rippleOverlay="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_about_rate" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ubah Password"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ubah Password Anda" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/btn_more"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mrl_rippleAlpha="0.2"
+        app:mrl_rippleColor="@color/abuabu"
+        app:mrl_rippleHover="true"
+        app:mrl_rippleOverlay="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_about_more" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hapus Akun"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hapus akun Anda" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/btn_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mrl_rippleAlpha="0.2"
+        app:mrl_rippleColor="@color/abuabu"
+        app:mrl_rippleHover="true"
+        app:mrl_rippleOverlay="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_about_info" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Info"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Informasi seputar aplikasi dan Developer" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <TextView
+        android:id="@+id/verifyMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:text="Email Not Verfied !"
+        android:textColor="#000000"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/resendCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verify Now"
+        android:textColor="@color/white"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:background="@drawable/bg_corner" />
+    <Button
+        android:id="@+id/resetPasswordLocal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reset Password"
+        android:textColor="@color/white"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_gravity="center"
+        android:visibility="visible"
+        android:background="@drawable/bg_corner" />
+
+    <Button
+        android:id="@+id/changeProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Change Profile"
+        android:textColor="@color/white"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_gravity="center"
+        android:visibility="visible"
+        android:background="@drawable/bg_corner" />
+    <Button
+        android:id="@+id/obat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Test Obat RV"
+        android:textColor="@color/white"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_gravity="center"
+        android:visibility="visible"
+        android:background="@drawable/bg_corner" />
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        app:mrl_rippleAlpha="0.2"
+        app:mrl_rippleColor="@color/abuabu"
+        app:mrl_rippleHover="true"
+        android:layout_alignParentBottom="true"
+        app:mrl_rippleOverlay="true">
+
+        <Button
+            android:id="@+id/btn_signout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_corner"
+            android:text="Log Out"
+            android:onClick="logout"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:visibility="gone" />
+</LinearLayout>

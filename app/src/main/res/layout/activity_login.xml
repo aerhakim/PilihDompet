@@ -56,8 +56,6 @@
                     android:layout_height="wrap_content">
 
 
-
-
                     <EditText
                         android:id="@+id/edEmail"
                         fontPath="@string/font_medium"
@@ -66,13 +64,13 @@
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_10sdp"
                         android:background="@drawable/bg_white"
-                        android:hint="@string/hint_email"
-                        android:textAlignment="viewStart"
                         android:gravity="start|center_vertical"
+                        android:hint="@string/hint_email"
                         android:imeOptions="actionNext"
                         android:paddingLeft="@dimen/_10sdp"
                         android:paddingRight="@dimen/_10sdp"
                         android:singleLine="true"
+                        android:textAlignment="viewStart"
                         android:textSize="@dimen/_10ssp"
                         tools:ignore="MissingPrefix" />
 

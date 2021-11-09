@@ -24,6 +24,10 @@
     <string name="font_light">fonts/Poppins-Light.ttf</string>
     <string name="font_italic">fonts/Poppins-ExtraBold.ttf</string>
 
+    <!--bottom navigation title-->
+    <string name="title_nav_category">E-Wallet</string>
+    <string name="title_nav_video">Promo</string>
+    <string name="title_nav_favorite">WishList</string>
 
     <string name="action_sign_in_short">REGISTER</string>
     <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
@@ -61,6 +65,8 @@
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
     <string name="settings_name">Account Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

@@ -1,6 +1,7 @@
 package io.github.aerhakim.pilihdompet.activity;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -12,108 +13,136 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import io.github.aerhakim.pilihdompet.R;
 
-
 public class LoginActivity extends AppCompatActivity {
+    EditText mEmail,mPassword;
+    TextView mCreateBtn,forgotTextLink, mLoginBtn;
+    ProgressBar progressBar;
+    FirebaseAuth fAuth;
 
-    private EditText inputEmail, inputPassword;
-    private FirebaseAuth auth;
-    private ProgressBar progressBar;
-    private TextView btnSignup, btnLogin, btnReset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
 
-        //Get Firebase auth instance
-        auth = FirebaseAuth.getInstance();
+        mEmail = findViewById(R.id.edEmail);
+        mPassword = findViewById(R.id.edPassword);
+        progressBar = findViewById(R.id.progressBar);
+        fAuth = FirebaseAuth.getInstance();
+        mLoginBtn = findViewById(R.id.tvLogin);
+        mCreateBtn = findViewById(R.id.tvSignup);
+        forgotTextLink = findViewById(R.id.tvForgetPassword);
 
-        if (auth.getCurrentUser() != null) {
-//            LOGS USER IN ONCE IT FINDS HE HAD LOGGED IN!
+        //Cek apakah user sudah login atau belum, kalau sudah langsung redirect ke mainactivity
+        if (fAuth.getCurrentUser() != null) {
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
             finish();
         }
 
-        // set the view now
-        setContentView(R.layout.activity_login);
-
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-
-        inputEmail = (EditText) findViewById(R.id.edEmail);
-        inputPassword = (EditText) findViewById(R.id.edPassword);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        btnSignup = (TextView) findViewById(R.id.tvSignup);
-        btnLogin = (TextView) findViewById(R.id.tvLogin);
-        btnReset = (TextView) findViewById(R.id.tvForgetPassword);
-
-        //Get Firebase auth instance
-        auth = FirebaseAuth.getInstance();
-
-        btnSignup.setOnClickListener(new View.OnClickListener() {
+        mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
-            }
-        });
 
-        btnReset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
-            }
-        });
+                String email = mEmail.getText().toString().trim();
+                String password = mPassword.getText().toString().trim();
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email = inputEmail.getText().toString();
-                final String password = inputPassword.getText().toString();
-
-                if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                if(TextUtils.isEmpty(email)){
+                    mEmail.setError("Email is Required.");
                     return;
                 }
 
-                if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                if(TextUtils.isEmpty(password)){
+                    mPassword.setError("Password is Required.");
+                    return;
+                }
+
+                if(password.length() < 6){
+                    mPassword.setError("Password Must be >= 6 Characters");
                     return;
                 }
 
                 progressBar.setVisibility(View.VISIBLE);
 
-                //authenticate user
-                auth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                // If sign in fails, display a message to the user. If sign in succeeds
-                                // the auth state listener will be notified and logic to handle the
-                                // signed in user can be handled in the listener.
-                                progressBar.setVisibility(View.GONE);
-                                if (!task.isSuccessful()) {
-                                    // there was an error
-                                    if (password.length() < 6) {
-                                        inputPassword.setError(getString(R.string.minimum_password));
-                                    } else {
-                                        Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
-                                    }
-                                } else {
-                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                    startActivity(intent);
-                                    finish();
-                                }
-                            }
-                        });
+                // authenticate the user
+
+                fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(LoginActivity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        }else {
+                            Toast.makeText(LoginActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.GONE);
+                        }
+
+                    }
+                });
+
             }
         });
+
+        mCreateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),SignUpActivity.class));
+            }
+        });
+
+        forgotTextLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final EditText resetMail = new EditText(v.getContext());
+                final AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
+                passwordResetDialog.setTitle("Reset Password ?");
+                passwordResetDialog.setMessage("Enter Your Email To Received Reset Link.");
+                passwordResetDialog.setView(resetMail);
+
+                passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // extract the email and send reset link
+                        String mail = resetMail.getText().toString();
+                        fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(LoginActivity.this, "Reset Link Sent To Your Email.", Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(LoginActivity.this, "Error ! Reset Link is Not Sent" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                    }
+                });
+
+                passwordResetDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // close the dialog
+                    }
+                });
+
+                passwordResetDialog.create().show();
+
+            }
+        });
+
+
     }
 }
