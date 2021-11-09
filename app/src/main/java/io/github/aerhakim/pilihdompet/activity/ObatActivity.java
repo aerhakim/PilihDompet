@@ -1,28 +1,28 @@
 package io.github.aerhakim.pilihdompet.activity;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
+//import android.content.Intent;
+//import android.os.Bundle;
+//import android.util.Log;
+//import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.util.List;
-
-import io.github.aerhakim.pilihdompet.R;
-import io.github.aerhakim.pilihdompet.adapter.HerosAdapter;
-import io.github.aerhakim.pilihdompet.model.GetHeros;
-import io.github.aerhakim.pilihdompet.model.Heros;
-import io.github.aerhakim.pilihdompet.rest.ApiClient;
-import io.github.aerhakim.pilihdompet.rest.ApiInterface;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+//import androidx.recyclerview.widget.LinearLayoutManager;
+//import androidx.recyclerview.widget.RecyclerView;
+//
+//
+//import com.google.android.material.floatingactionbutton.FloatingActionButton;
+//
+//import java.util.List;
+//
+//import io.github.aerhakim.pilihdompet.R;
+//import io.github.aerhakim.pilihdompet.adapter.HerosAdapter;
+//import io.github.aerhakim.pilihdompet.model.GetHeros;
+//import io.github.aerhakim.pilihdompet.model.Heros;
+//import io.github.aerhakim.pilihdompet.rest.ApiClient;
+//import io.github.aerhakim.pilihdompet.rest.ApiInterface;
+//import retrofit2.Call;
+//import retrofit2.Callback;
+//import retrofit2.Response;
 
 
 public class ObatActivity extends AppCompatActivity {
