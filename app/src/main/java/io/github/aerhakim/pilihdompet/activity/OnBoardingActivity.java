@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -17,7 +16,7 @@ import android.widget.TextView;
 
 
 import io.github.aerhakim.pilihdompet.R;
-import io.github.aerhakim.pilihdompet.helper.SliderAdapter;
+import io.github.aerhakim.pilihdompet.model.SliderAdapter;
 
 
 public class OnBoardingActivity extends AppCompatActivity {

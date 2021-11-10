@@ -38,7 +38,16 @@ import io.github.aerhakim.pilihdompet.fragment.WishlistFragment;
 
 
 public class MainActivity extends AppCompatActivity {
+    //deklrasasi Firebase
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    StorageReference storageReference;
+    FirebaseUser user;
+    String userId;
+    //deklarasi button/item yang ingin diganti
 
+    ImageView profileImage;
+    TextView tvNama;
     private BottomNavigationView navigation;
     private ViewPager viewPager;
     int pager_number = 4;
@@ -74,6 +83,43 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+//    public void FragmentData() {
+//        //deklarasi Firebase
+//        fAuth = FirebaseAuth.getInstance();
+//        fStore = FirebaseFirestore.getInstance();
+//        storageReference = FirebaseStorage.getInstance().getReference();
+//        profileImage = findViewById(R.id.imageProfile);
+//
+//        tvNama = findViewById(R.id.nama);
+//
+//        //firebase buat ambil foto
+//        StorageReference profileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
+//        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+//            @Override
+//            public void onSuccess(Uri uri) {
+//                Picasso.get().load(uri).into(profileImage);
+//            }
+//        });
+//
+//        //deklarasi Firebase
+//        userId = fAuth.getCurrentUser().getUid();
+//        user = fAuth.getCurrentUser();
+//
+//        //deklarasi fire base untuk mengganti data statis ke dinamis dr firebase
+//        DocumentReference documentReference = fStore.collection("users").document(userId);
+//        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+//            @Override
+//            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+//                if(documentSnapshot.exists()){
+//                    tvNama.setText(documentSnapshot.getString("fName"));
+//
+//                }else {
+//                    Log.d("tag", "onEvent: Document do not exists");
+//                }
+//            }
+//        });
+//    }
 
     public class MyAdapter extends FragmentPagerAdapter {
 

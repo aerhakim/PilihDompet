@@ -275,18 +275,7 @@
         android:layout_gravity="center"
         android:visibility="visible"
         android:background="@drawable/bg_corner" />
-    <Button
-        android:id="@+id/obat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Test Obat RV"
-        android:textColor="@color/white"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="@dimen/_20sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
-        android:layout_gravity="center"
-        android:visibility="visible"
-        android:background="@drawable/bg_corner" />
+
 
     <com.balysv.materialripple.MaterialRippleLayout
         android:id="@+id/btn_logout"
@@ -318,5 +307,5 @@
         android:id="@+id/progressBar"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:visibility="gone" />
+        android:visibility="invisible" />
 </LinearLayout>

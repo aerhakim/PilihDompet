@@ -8,8 +8,8 @@
 
     <item
         android:id="@+id/navigation_category"
-        android:icon="@drawable/ic_nav_home"
-        android:title="Category" />
+        android:icon="@drawable/ic_wallet"
+        android:title="E-Wallet" />
 
     <item
         android:id="@+id/navigation_promo"
@@ -18,7 +18,7 @@
 
     <item
         android:id="@+id/navigation_wishlist"
-        android:icon="@drawable/ic_nav_home"
+        android:icon="@drawable/ic_no_favorite"
         android:title="Wishlist" />
 
 </menu>

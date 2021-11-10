@@ -1,4 +1,4 @@
-package io.github.aerhakim.pilihdompet.helper;
+package io.github.aerhakim.pilihdompet.model;
 
 import android.content.Context;
 import android.view.LayoutInflater;

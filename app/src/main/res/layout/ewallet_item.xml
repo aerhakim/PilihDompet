@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginBottom="10dp"
+    android:padding="10dp"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="4dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/img_item_photo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="4dp"
+            app:riv_corner_radius="5dp"
+            tools:src="@color/colorAccent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="Nama E-Wallet"
+            android:id="@+id/etNama"
+            android:textStyle="bold"
+            android:layout_toEndOf="@id/img_item_photo"
+            android:layout_toRightOf="@id/img_item_photo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fee Transaksi"
+            android:id="@+id/etFeetrx"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_below="@id/etNama"
+            android:layout_toEndOf="@id/img_item_photo"
+            android:layout_toRightOf="@id/img_item_photo" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="App Size"
+            android:layout_below="@id/etFeetrx"
+            android:layout_toEndOf="@id/img_item_photo"
+            android:layout_toRightOf="@id/img_item_photo"
+            android:id="@+id/etSize"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/etRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etSize"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toEndOf="@id/img_item_photo"
+            android:layout_toRightOf="@id/img_item_photo"
+            android:text="Google Play Rating" />
+        <TextView
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_below="@id/etRating"
+            android:id="@+id/etDetail"
+            android:visibility="invisible"
+            android:text="Isi Detail Deskripsi" />
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

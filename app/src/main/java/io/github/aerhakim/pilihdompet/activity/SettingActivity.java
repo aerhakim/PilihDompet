@@ -185,14 +185,6 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
-//        Button btnMove = findViewById(R.id.obat);
-//        btnMove.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                startActivity(new Intent(SettingActivity.this, ObatActivity.class));
-//            }
-//        });
 
     }
 
