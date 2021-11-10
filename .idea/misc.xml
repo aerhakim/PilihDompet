@@ -12,15 +12,19 @@
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/drawable-v24/bg_shimmer.xml" value="0.3671875" />
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/drawable-v24/bg_white.xml" value="0.3671875" />
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/drawable-v24/next_btn.xml" value="0.2109375" />
+        <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/drawable/bg_orangecornertrans_10.xml" value="0.3671875" />
+        <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/drawable/bg_round_white.xml" value="0.3671875" />
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/drawable/ic_icon_foreground.xml" value="0.3671875" />
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/drawable/ic_logo_foreground.xml" value="0.3671875" />
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/drawable/ic_right.xml" value="0.3671875" />
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/drawable/next_btn.xml" value="0.3671875" />
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/drawable/skip_btn.xml" value="0.3671875" />
+        <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/drawable/tab_indicator_selected.xml" value="0.3671875" />
+        <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/drawable/tab_selector.xml" value="0.3671875" />
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/layout/activity_account_setting.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/layout/activity_dashboard.xml" value="0.2966485507246377" />
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/layout/activity_data.xml" value="0.25815217391304346" />
-        <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/layout/activity_detail.xml" value="0.35104166666666664" />
+        <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/layout/activity_detail.xml" value="0.33" />
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/layout/activity_edit.xml" value="0.26811594202898553" />
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/layout/activity_insert.xml" value="0.26811594202898553" />
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/layout/activity_login.xml" value="0.35104166666666664" />
@@ -35,7 +39,7 @@
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/layout/activity_user_profile.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/layout/app_bar_dashboard.xml" value="0.2966485507246377" />
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/layout/content_dashboard.xml" value="0.3007246376811594" />
-        <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/layout/ewallet_item.xml" value="0.22" />
+        <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/layout/ewallet_item.xml" value="0.33" />
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/layout/fragment_ewallet.xml" value="0.29030797101449274" />
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/layout/fragment_gallery.xml" value="0.2966485507246377" />
         <entry key="..\:/Users/user/Desktop/Portofolio/PilihDompet/app/src/main/res/layout/fragment_home.xml" value="0.2966485507246377" />

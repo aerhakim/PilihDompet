@@ -1,88 +1,322 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginRight="10dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginBottom="10dp"
-    android:padding="10dp"
-    app:cardElevation="8dp"
-    app:cardCornerRadius="4dp">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <RelativeLayout
+        android:id="@+id/rlToolBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="@dimen/_180sdp">
 
-        <com.makeramen.roundedimageview.RoundedImageView
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
             android:id="@+id/img_item_photo"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginBottom="4dp"
-            app:riv_corner_radius="5dp"
-            tools:src="@color/colorAccent" />
-
-        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="16dp"
-            android:layout_below="@+id/img_item_photo"
-            android:layout_marginBottom="8dp"
-            android:text="Nama E-Wallet"
-            android:id="@+id/etNama"
-            android:textStyle="bold"
- />
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/white"
+            android:background="@color/trans_black"
+            android:src="@drawable/icon1" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fee Transaksi"
-            android:id="@+id/etFeetrx"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="8dp"
-            android:layout_below="@id/etNama"
- />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="App Size"
-            android:layout_below="@id/etFeetrx"
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_5sdp"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp"
+            app:tabPaddingEnd="10dp"
+            app:tabPaddingStart="10dp" />
 
-            android:id="@+id/etSize"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="8dp"/>
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Google Play Rating"
-            android:layout_below="@id/etSize"
+            android:layout_height="@dimen/_50sdp">
 
-            android:id="@+id/etRating"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="8dp"/>
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="@dimen/_38sdp"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/bg_orangecornertrans_10"
+                android:backgroundTint="@color/greydark"
+                android:padding="@dimen/_5sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_back"
+                app:tint="@color/white" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/etRating"
-            android:id="@+id/etDetail"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="16dp"
-            android:text="Isi Detail Deskripsi" />
+            <RelativeLayout
+                android:layout_width="@dimen/_38sdp"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:background="@drawable/bg_orangecornertrans_10"
+                android:backgroundTint="@color/greydark">
+
+                <ImageView
+                    android:id="@+id/ivCart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/_8sdp"
+                    android:src="@drawable/ic_no_favorite"
+                    app:tint="@color/white" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
     </RelativeLayout>
 
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rlAddtoCart"
+        android:layout_below="@id/rlToolBar">
 
-</ScrollView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvFoodName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text="Info E-Wallet"
+                            android:textAlignment="viewStart"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp"
+                            tools:ignore="MissingPrefix" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text="Nama"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp"
+                            tools:ignore="MissingPrefix" />
+
+                        <TextView
+                            android:id="@+id/etNama"
+                            fontPath="@string/font_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold"
+                            tools:ignore="MissingPrefix"
+                            tools:text="Dana" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text="Size"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp"
+                            tools:ignore="MissingPrefix" />
+
+                        <TextView
+                            android:id="@+id/etSize"
+                            fontPath="@string/font_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:textSize="@dimen/_12ssp"
+                            tools:ignore="MissingPrefix"
+                            tools:text="100 MB" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text="Fee Transaksi"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp"
+                            tools:ignore="MissingPrefix" />
+
+                        <TextView
+                            android:id="@+id/etFeetrx"
+                            fontPath="@string/font_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:textSize="@dimen/_12ssp"
+                            tools:ignore="MissingPrefix"
+                            tools:text="0.1%" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:text="Google Play Rating"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp"
+                            tools:ignore="MissingPrefix" />
+
+                        <TextView
+                            android:id="@+id/etRating"
+                            fontPath="@string/font_bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:textSize="@dimen/_12ssp"
+                            tools:ignore="MissingPrefix"
+                            tools:text="4,3" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvFoodDetail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/cvFoodName"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        fontPath="@string/font_bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="Detail"
+                        android:textStyle="bold"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp"
+                        tools:ignore="MissingPrefix" />
+
+
+                    <LinearLayout
+                        android:id="@+id/llDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/bg_editfield"
+                        android:orientation="vertical" />
+
+                    <TextView
+                        android:id="@+id/etDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Isi Detail Deskripsi" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/rlAddtoCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_10sdp">
+
+
+        <Button
+            android:id="@+id/btnInstall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Install Aplikasi"
+            android:textColor="@color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:background="@drawable/bg_corner" />
+    </RelativeLayout>
+
+</RelativeLayout>
