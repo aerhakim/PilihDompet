@@ -1,21 +1,30 @@
 package io.github.aerhakim.pilihdompet.activity;
 
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,6 +33,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
@@ -31,23 +41,20 @@ import com.squareup.picasso.Picasso;
 import javax.annotation.Nullable;
 
 import io.github.aerhakim.pilihdompet.R;
+import io.github.aerhakim.pilihdompet.RetrofitClient;
 import io.github.aerhakim.pilihdompet.fragment.EwalletFragment;
 import io.github.aerhakim.pilihdompet.fragment.HomeFragment;
 import io.github.aerhakim.pilihdompet.fragment.PromoFragment;
 import io.github.aerhakim.pilihdompet.fragment.WishlistFragment;
+import io.github.aerhakim.pilihdompet.model.RegisterResponse;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity {
-    //deklrasasi Firebase
-    FirebaseAuth fAuth;
-    FirebaseFirestore fStore;
-    StorageReference storageReference;
-    FirebaseUser user;
-    String userId;
-    //deklarasi button/item yang ingin diganti
-
-    ImageView profileImage;
-    TextView tvNama;
+    private static final String TAG = "PushNotification";
+    private static final String CHANNEL_ID = "101";
     private BottomNavigationView navigation;
     private ViewPager viewPager;
     int pager_number = 4;
@@ -62,7 +69,8 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewpager);
         viewPager.setAdapter(new MyAdapter(getSupportFragmentManager()));
         viewPager.setOffscreenPageLimit(pager_number);
-
+        createNotificationChannel();
+        getToken();
         navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
@@ -84,43 +92,53 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    public void FragmentData() {
-//        //deklarasi Firebase
-//        fAuth = FirebaseAuth.getInstance();
-//        fStore = FirebaseFirestore.getInstance();
-//        storageReference = FirebaseStorage.getInstance().getReference();
-//        profileImage = findViewById(R.id.imageProfile);
-//
-//        tvNama = findViewById(R.id.nama);
-//
-//        //firebase buat ambil foto
-//        StorageReference profileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
-//        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-//            @Override
-//            public void onSuccess(Uri uri) {
-//                Picasso.get().load(uri).into(profileImage);
-//            }
-//        });
-//
-//        //deklarasi Firebase
-//        userId = fAuth.getCurrentUser().getUid();
-//        user = fAuth.getCurrentUser();
-//
-//        //deklarasi fire base untuk mengganti data statis ke dinamis dr firebase
-//        DocumentReference documentReference = fStore.collection("users").document(userId);
-//        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-//            @Override
-//            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-//                if(documentSnapshot.exists()){
-//                    tvNama.setText(documentSnapshot.getString("fName"));
-//
-//                }else {
-//                    Log.d("tag", "onEvent: Document do not exists");
-//                }
-//            }
-//        });
-//    }
+    private void getToken() {
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
+            @Override
+            public void onComplete(@NonNull Task<String> task) {
+                //If task is failed then
+                if (!task.isSuccessful()) {
+                    Log.d(TAG, "onComplete: Failed to get the Token");
+                }
 
+
+                //Token
+                String token = task.getResult();
+                Log.d(TAG, "onComplete: " + token);
+
+                String tokenfcm = token;
+                Call<RegisterResponse> call= RetrofitClient
+                        .getInstance()
+                        .getApi()
+                        .register(tokenfcm);
+                call.enqueue(new Callback<RegisterResponse>() {
+                                 @Override
+                                 public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                                    //ga tau mau diisi apa
+                                 }
+
+                                 @Override
+                                 public void onFailure(Call<RegisterResponse> call, Throwable t) {
+
+                                     Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                                 }
+                             });
+            }
+        });
+    }
+
+
+    private void createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "firebaseNotifChannel";
+            String description = "Receve Firebase notification";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
     public class MyAdapter extends FragmentPagerAdapter {
 
         MyAdapter(FragmentManager fm) {

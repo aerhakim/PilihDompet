@@ -21,8 +21,8 @@
             android:id="@+id/img_item_photo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTint="@color/white"
             android:background="@color/trans_black"
+            android:backgroundTint="@color/white"
             android:src="@drawable/icon1" />
 
         <com.google.android.material.tabs.TabLayout
