@@ -1,9 +1,9 @@
-package io.github.aerhakim.pilihdompet;
+package io.github.aerhakim.pilihdompet.Rest;
 
 
 
-import io.github.aerhakim.pilihdompet.model.FetchUserResponse;
-import io.github.aerhakim.pilihdompet.model.RegisterResponse;
+import io.github.aerhakim.pilihdompet.model.GetEwallet;
+import io.github.aerhakim.pilihdompet.model.GetToken;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -13,11 +13,11 @@ import retrofit2.http.POST;
 public interface Api {
 
     @GET("fetchusers.php")
-    Call<FetchUserResponse> fetchAllUsers();
+    Call<GetEwallet> fetchAllUsers();
 
     @FormUrlEncoded
     @POST("register.php")
-    Call<RegisterResponse> register(
+    Call<GetToken> register(
             @Field("token") String token
     );
 }

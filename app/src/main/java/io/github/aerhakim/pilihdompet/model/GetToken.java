@@ -2,12 +2,12 @@ package io.github.aerhakim.pilihdompet.model;
 
 
 
-public class RegisterResponse {
+public class GetToken {
 
     String error;
     String message;
 
-    public RegisterResponse(String error, String message) {
+    public GetToken(String error, String message) {
         this.error = error;
         this.message = message;
     }

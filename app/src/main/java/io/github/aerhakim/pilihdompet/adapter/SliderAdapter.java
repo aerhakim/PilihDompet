@@ -1,4 +1,4 @@
-package io.github.aerhakim.pilihdompet.model;
+package io.github.aerhakim.pilihdompet.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -30,7 +30,7 @@ public class SliderAdapter extends PagerAdapter {
             R.string.first_slide_title,
             R.string.second_slide_title,
             R.string.third_slide_title,
-            R.string.first_slide_title,
+            R.string.fourth_slide_title,
     };
     int descs[] = {
             R.string.first_slide_desc,

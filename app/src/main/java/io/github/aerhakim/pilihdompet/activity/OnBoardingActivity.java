@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 
 import io.github.aerhakim.pilihdompet.R;
-import io.github.aerhakim.pilihdompet.model.SliderAdapter;
+import io.github.aerhakim.pilihdompet.adapter.SliderAdapter;
 
 
 public class OnBoardingActivity extends AppCompatActivity {

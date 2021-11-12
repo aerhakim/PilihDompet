@@ -1,11 +1,11 @@
 package io.github.aerhakim.pilihdompet.model;
 
-public class User {
+public class Ewallet {
 
     int id;
     String nama,feetrx, size, gambar, rating, detail;
 
-    public User(int id, String nama, String detail, String feetrx, String size, String gambar, String rating) {
+    public Ewallet(int id, String nama, String detail, String feetrx, String size, String gambar, String rating) {
         this.id = id;
         this.nama = nama;
         this.feetrx = feetrx;

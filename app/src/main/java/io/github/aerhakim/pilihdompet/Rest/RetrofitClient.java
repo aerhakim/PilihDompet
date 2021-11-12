@@ -1,4 +1,4 @@
-package io.github.aerhakim.pilihdompet;
+package io.github.aerhakim.pilihdompet.Rest;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -11,8 +11,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitClient {
 
 
-    private static String BASE_URL="http://192.168.206.137:8080/pilihdompet/";
-    public static final String IMAGES_URL = "http://192.168.206.137:8080/pilihdompet/gambar/";
+    private static String BASE_URL="https://testfintech.000webhostapp.com/";
+    public static final String IMAGES_URL = "https://testfintech.000webhostapp.com/gambar/";
     private static RetrofitClient retrofitClient;
     private static Retrofit retrofit;
 

@@ -17,10 +17,10 @@ import android.widget.Toast;
 import java.util.List;
 
 import io.github.aerhakim.pilihdompet.R;
-import io.github.aerhakim.pilihdompet.RetrofitClient;
-import io.github.aerhakim.pilihdompet.UserAdapter;
-import io.github.aerhakim.pilihdompet.model.FetchUserResponse;
-import io.github.aerhakim.pilihdompet.model.User;
+import io.github.aerhakim.pilihdompet.Rest.RetrofitClient;
+import io.github.aerhakim.pilihdompet.adapter.WalletAdapter;
+import io.github.aerhakim.pilihdompet.model.GetEwallet;
+import io.github.aerhakim.pilihdompet.model.Ewallet;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -30,7 +30,7 @@ public class EwalletFragment extends Fragment {
 
 
     RecyclerView recyclerView;
-    List<User> userList;
+    List<Ewallet> ewalletList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,16 +50,16 @@ public class EwalletFragment extends Fragment {
 
         //retrofit
 
-        Call<FetchUserResponse> call= RetrofitClient.getInstance().getApi().fetchAllUsers();
+        Call<GetEwallet> call= RetrofitClient.getInstance().getApi().fetchAllUsers();
 
-        call.enqueue(new Callback<FetchUserResponse>() {
+        call.enqueue(new Callback<GetEwallet>() {
             @Override
-            public void onResponse(Call<FetchUserResponse> call, Response<FetchUserResponse> response) {
+            public void onResponse(Call<GetEwallet> call, Response<GetEwallet> response) {
 
                 if(response.isSuccessful()){
 
-                    userList=response.body().getUserList();
-                    recyclerView.setAdapter(new UserAdapter(getActivity(),userList));
+                    ewalletList =response.body().getEwalletList();
+                    recyclerView.setAdapter(new WalletAdapter(getActivity(), ewalletList));
 
                 }
                 else{
@@ -69,7 +69,7 @@ public class EwalletFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<FetchUserResponse> call, Throwable t) {
+            public void onFailure(Call<GetEwallet> call, Throwable t) {
 
                 Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }

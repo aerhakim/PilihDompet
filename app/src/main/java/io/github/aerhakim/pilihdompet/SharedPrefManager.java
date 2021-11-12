@@ -3,32 +3,20 @@ package io.github.aerhakim.pilihdompet;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import io.github.aerhakim.pilihdompet.model.User;
+import io.github.aerhakim.pilihdompet.model.Ewallet;
 
 
 public class SharedPrefManager {
 
-    private static String SHARED_PREF_NAME="thecodingshef";
+    private static String SHARED_PREF_NAME="pilihdompet";
     private SharedPreferences sharedPreferences;
     Context context;
     private SharedPreferences.Editor editor;
 
 
-    public SharedPrefManager(Context context) {
-        this.context = context;
-    }
-
-
-
-   public boolean isLoggedIn(){
-       sharedPreferences=context.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
-       return sharedPreferences.getBoolean("logged",false);
-    }
-
-
-    public User getUser(){
+    public Ewallet getEwallet(){
         sharedPreferences=context.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
-        return new User(sharedPreferences.getInt("id",-1),
+        return new Ewallet(sharedPreferences.getInt("id",-1),
                 sharedPreferences.getString("nama",null),
                 sharedPreferences.getString("size",null),
                 sharedPreferences.getString("gambar",null),
@@ -37,12 +25,4 @@ public class SharedPrefManager {
                 sharedPreferences.getString("feetrx",null));
     }
 
-
-   public void logout(){
-        sharedPreferences=context.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
-        editor=sharedPreferences.edit();
-        editor.clear();
-        editor.apply();
-
-        }
 }

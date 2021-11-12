@@ -24,6 +24,7 @@
             android:layout_height="80dp"
             android:layout_centerVertical="true"
             android:layout_marginBottom="4dp"
+            android:layout_marginRight="@dimen/_10sdp"
             app:riv_corner_radius="5dp"
             tools:src="@color/colorAccent" />
 

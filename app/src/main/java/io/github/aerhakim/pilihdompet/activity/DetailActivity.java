@@ -4,26 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
-import io.github.aerhakim.pilihdompet.Api;
 import io.github.aerhakim.pilihdompet.R;
-import io.github.aerhakim.pilihdompet.Rest.ApiClient;
-import io.github.aerhakim.pilihdompet.Rest.ApiInterface;
-import io.github.aerhakim.pilihdompet.RetrofitClient;
-import io.github.aerhakim.pilihdompet.model.FetchUserResponse;
-import retrofit2.Call;
+import io.github.aerhakim.pilihdompet.Rest.Api;
+import io.github.aerhakim.pilihdompet.Rest.ApiDetail;
+import io.github.aerhakim.pilihdompet.Rest.RetrofitClient;
 
 public class DetailActivity extends AppCompatActivity {
     TextView appName,appFee, appSize, appRating, appDetail;
     ImageView appGambar;
-    ApiInterface mApiInterface;
+    Api mApiInterface;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +46,6 @@ public class DetailActivity extends AppCompatActivity {
                 .into(appGambar);
 
         // Definisi API
-        mApiInterface = ApiClient.getClient().create(ApiInterface.class);
+        mApiInterface = ApiDetail.getClient().create(Api.class);
     }
 }

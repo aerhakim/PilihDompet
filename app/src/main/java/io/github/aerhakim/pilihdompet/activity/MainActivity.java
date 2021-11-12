@@ -3,16 +3,11 @@ package io.github.aerhakim.pilihdompet.activity;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.Patterns;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,30 +18,17 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.messaging.FirebaseMessaging;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.squareup.picasso.Picasso;
-
-import javax.annotation.Nullable;
 
 import io.github.aerhakim.pilihdompet.R;
-import io.github.aerhakim.pilihdompet.RetrofitClient;
+import io.github.aerhakim.pilihdompet.Rest.RetrofitClient;
 import io.github.aerhakim.pilihdompet.fragment.EwalletFragment;
 import io.github.aerhakim.pilihdompet.fragment.HomeFragment;
 import io.github.aerhakim.pilihdompet.fragment.PromoFragment;
 import io.github.aerhakim.pilihdompet.fragment.WishlistFragment;
-import io.github.aerhakim.pilihdompet.model.RegisterResponse;
+import io.github.aerhakim.pilihdompet.model.GetToken;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -107,18 +89,18 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "onComplete: " + token);
 
                 String tokenfcm = token;
-                Call<RegisterResponse> call= RetrofitClient
+                Call<GetToken> call= RetrofitClient
                         .getInstance()
                         .getApi()
                         .register(tokenfcm);
-                call.enqueue(new Callback<RegisterResponse>() {
+                call.enqueue(new Callback<GetToken>() {
                                  @Override
-                                 public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                                 public void onResponse(Call<GetToken> call, Response<GetToken> response) {
                                     //ga tau mau diisi apa
                                  }
 
                                  @Override
-                                 public void onFailure(Call<RegisterResponse> call, Throwable t) {
+                                 public void onFailure(Call<GetToken> call, Throwable t) {
 
                                      Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                                  }

@@ -1,4 +1,4 @@
-package io.github.aerhakim.pilihdompet;
+package io.github.aerhakim.pilihdompet.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,17 +17,19 @@ import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
+import io.github.aerhakim.pilihdompet.R;
+import io.github.aerhakim.pilihdompet.Rest.RetrofitClient;
 import io.github.aerhakim.pilihdompet.activity.DetailActivity;
-import io.github.aerhakim.pilihdompet.model.User;
+import io.github.aerhakim.pilihdompet.model.Ewallet;
 
-public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
+public class WalletAdapter extends RecyclerView.Adapter<WalletAdapter.ViewHolder> {
 
-    List<User> userList;
+    List<Ewallet> ewalletList;
    Context context;
 
-    public UserAdapter(Context context, List<User> userList) {
+    public WalletAdapter(Context context, List<Ewallet> ewalletList) {
         this.context = context;
-        this.userList=userList;
+        this.ewalletList = ewalletList;
     }
 
     @NonNull
@@ -40,26 +42,26 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        holder.appName.setText(userList.get(position).getNama());
-        holder.appFee.setText(userList.get(position).getFeetrx());
-        holder.appDetail.setText(userList.get(position).getDetail());
-        holder.appRating.setText(userList.get(position).getRating());
-        holder.appSize.setText(userList.get(position).getSize());
+        holder.appName.setText(ewalletList.get(position).getNama());
+        holder.appFee.setText(ewalletList.get(position).getFeetrx());
+        holder.appDetail.setText(ewalletList.get(position).getDetail());
+        holder.appRating.setText(ewalletList.get(position).getRating());
+        holder.appSize.setText(ewalletList.get(position).getSize());
         Glide.with(holder.itemView.getContext())
-                .load(RetrofitClient.IMAGES_URL + userList.get(position).getGambar())
+                .load(RetrofitClient.IMAGES_URL + ewalletList.get(position).getGambar())
                 .apply(new RequestOptions().override(350, 550))
                 .into(holder.appGambar);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent mIntent = new Intent(view.getContext(), DetailActivity.class);
-                mIntent.putExtra("Id", userList.get(position).getId());
-                mIntent.putExtra("nama", userList.get(position).getNama());
-                mIntent.putExtra("feetrx", userList.get(position).getFeetrx());
-                mIntent.putExtra("size", userList.get(position).getSize());
-                mIntent.putExtra("rating", userList.get(position).getRating());
-                mIntent.putExtra("detail", userList.get(position).getDetail());
-                mIntent.putExtra("gambar", userList.get(position).getGambar());
+                mIntent.putExtra("Id", ewalletList.get(position).getId());
+                mIntent.putExtra("nama", ewalletList.get(position).getNama());
+                mIntent.putExtra("feetrx", ewalletList.get(position).getFeetrx());
+                mIntent.putExtra("size", ewalletList.get(position).getSize());
+                mIntent.putExtra("rating", ewalletList.get(position).getRating());
+                mIntent.putExtra("detail", ewalletList.get(position).getDetail());
+                mIntent.putExtra("gambar", ewalletList.get(position).getGambar());
 
                 view.getContext().startActivity(mIntent);
             }
@@ -68,7 +70,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return userList.size();
+        return ewalletList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

@@ -2,13 +2,12 @@ package io.github.aerhakim.pilihdompet.Rest;
 
 
 
-import io.github.aerhakim.pilihdompet.Config;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ApiClient {
+public class ApiDetail {
 
-    public static final String BASE_URL = Config.BASE_URL;
+    private static String BASE_URL="https://testfintech.000webhostapp.com/";
     private static Retrofit retrofit = null;
     public static Retrofit getClient() {
         if (retrofit==null) {
