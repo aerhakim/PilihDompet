@@ -18,7 +18,7 @@
             android:layout_height="wrap_content" />
 
         <ImageView
-            android:id="@+id/img_item_photo"
+            android:id="@+id/ivGambar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/trans_black"
@@ -141,7 +141,7 @@
                             tools:ignore="MissingPrefix" />
 
                         <TextView
-                            android:id="@+id/etNama"
+                            android:id="@+id/tvJudul"
                             fontPath="@string/font_bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

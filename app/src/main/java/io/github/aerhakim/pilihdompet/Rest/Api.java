@@ -3,6 +3,7 @@ package io.github.aerhakim.pilihdompet.Rest;
 
 
 import io.github.aerhakim.pilihdompet.model.GetEwallet;
+import io.github.aerhakim.pilihdompet.model.GetPromo;
 import io.github.aerhakim.pilihdompet.model.GetToken;
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -14,6 +15,9 @@ public interface Api {
 
     @GET("ewallet.php")
     Call<GetEwallet> fetchAllUsers();
+
+    @GET("promo.php")
+    Call<GetPromo> promo();
 
     @FormUrlEncoded
     @POST("token.php")

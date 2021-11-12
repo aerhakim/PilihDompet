@@ -80,8 +80,8 @@ public class WalletAdapter extends RecyclerView.Adapter<WalletAdapter.ViewHolder
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             appSize=itemView.findViewById(R.id.etSize);
-            appGambar=itemView.findViewById(R.id.img_item_photo);
-            appName=itemView.findViewById(R.id.etNama);
+            appGambar=itemView.findViewById(R.id.ivGambar);
+            appName=itemView.findViewById(R.id.tvJudul);
             appDetail=itemView.findViewById(R.id.etDetail);
             appFee=itemView.findViewById(R.id.etFeetrx);
             appRating=itemView.findViewById(R.id.etRating);
