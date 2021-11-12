@@ -1,6 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginBottom="10dp"
+    android:padding="10dp"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="4dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/ivGambar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:src="@drawable/gf"
+            app:riv_corner_radius="5dp" />
+
+        <RelativeLayout
+            android:id="@+id/abc1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivGambar"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp">
+
+            <TextView
+                android:id="@+id/tvJudul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Judul Promo"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="MissingPrefix" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/abc2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_below="@id/abc1"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp">
+
+            <TextView
+                android:id="@+id/tvDeskripsi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Contoh Deskripsi"
+                android:textStyle="bold"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="MissingPrefix" />
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
