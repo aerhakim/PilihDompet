@@ -12,11 +12,11 @@ import retrofit2.http.POST;
 
 public interface Api {
 
-    @GET("fetchusers.php")
+    @GET("ewallet.php")
     Call<GetEwallet> fetchAllUsers();
 
     @FormUrlEncoded
-    @POST("register.php")
+    @POST("token.php")
     Call<GetToken> register(
             @Field("token") String token
     );

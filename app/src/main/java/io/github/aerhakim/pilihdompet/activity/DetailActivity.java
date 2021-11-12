@@ -13,7 +13,7 @@ import com.bumptech.glide.request.RequestOptions;
 import io.github.aerhakim.pilihdompet.R;
 import io.github.aerhakim.pilihdompet.Rest.Api;
 import io.github.aerhakim.pilihdompet.Rest.ApiDetail;
-import io.github.aerhakim.pilihdompet.Rest.RetrofitClient;
+import io.github.aerhakim.pilihdompet.Rest.Config;
 
 public class DetailActivity extends AppCompatActivity {
     TextView appName,appFee, appSize, appRating, appDetail;
@@ -41,7 +41,7 @@ public class DetailActivity extends AppCompatActivity {
 
         // Masukan Gambar Ke Image View Gunakan Glide
         Glide.with(DetailActivity.this)
-                .load(RetrofitClient.IMAGES_URL + mIntent.getStringExtra("gambar"))
+                .load(Config.IMAGES_URL + mIntent.getStringExtra("gambar"))
                 .apply(new RequestOptions().override(350, 550))
                 .into(appGambar);
 

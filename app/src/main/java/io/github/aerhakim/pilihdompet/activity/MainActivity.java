@@ -23,7 +23,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import io.github.aerhakim.pilihdompet.R;
-import io.github.aerhakim.pilihdompet.Rest.RetrofitClient;
+import io.github.aerhakim.pilihdompet.Rest.Config;
 import io.github.aerhakim.pilihdompet.fragment.EwalletFragment;
 import io.github.aerhakim.pilihdompet.fragment.HomeFragment;
 import io.github.aerhakim.pilihdompet.fragment.PromoFragment;
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "onComplete: " + token);
 
                 String tokenfcm = token;
-                Call<GetToken> call= RetrofitClient
+                Call<GetToken> call= Config
                         .getInstance()
                         .getApi()
                         .register(tokenfcm);

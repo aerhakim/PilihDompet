@@ -17,7 +17,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import io.github.aerhakim.pilihdompet.R;
-import io.github.aerhakim.pilihdompet.Rest.RetrofitClient;
+import io.github.aerhakim.pilihdompet.Rest.Config;
 import io.github.aerhakim.pilihdompet.adapter.WalletAdapter;
 import io.github.aerhakim.pilihdompet.model.GetEwallet;
 import io.github.aerhakim.pilihdompet.model.Ewallet;
@@ -50,7 +50,7 @@ public class EwalletFragment extends Fragment {
 
         //retrofit
 
-        Call<GetEwallet> call= RetrofitClient.getInstance().getApi().fetchAllUsers();
+        Call<GetEwallet> call= Config.getInstance().getApi().fetchAllUsers();
 
         call.enqueue(new Callback<GetEwallet>() {
             @Override

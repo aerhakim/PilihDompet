@@ -18,7 +18,7 @@ import com.bumptech.glide.request.RequestOptions;
 import java.util.List;
 
 import io.github.aerhakim.pilihdompet.R;
-import io.github.aerhakim.pilihdompet.Rest.RetrofitClient;
+import io.github.aerhakim.pilihdompet.Rest.Config;
 import io.github.aerhakim.pilihdompet.activity.DetailActivity;
 import io.github.aerhakim.pilihdompet.model.Ewallet;
 
@@ -48,7 +48,7 @@ public class WalletAdapter extends RecyclerView.Adapter<WalletAdapter.ViewHolder
         holder.appRating.setText(ewalletList.get(position).getRating());
         holder.appSize.setText(ewalletList.get(position).getSize());
         Glide.with(holder.itemView.getContext())
-                .load(RetrofitClient.IMAGES_URL + ewalletList.get(position).getGambar())
+                .load(Config.IMAGES_URL + ewalletList.get(position).getGambar())
                 .apply(new RequestOptions().override(350, 550))
                 .into(holder.appGambar);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
