@@ -63,10 +63,10 @@
                 android:layout_height="wrap_content"
                 android:gravity="start"
                 android:text="Contoh Deskripsi"
-                android:textStyle="bold"
                 android:textAlignment="viewStart"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
                 tools:ignore="MissingPrefix" />
 
         </RelativeLayout>

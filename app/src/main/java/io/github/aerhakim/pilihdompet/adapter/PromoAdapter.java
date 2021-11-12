@@ -43,8 +43,8 @@ public class PromoAdapter extends RecyclerView.Adapter<PromoAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        holder.promoDeskripsi.setText(promoList.get(position).getJudul());
-        holder.promoJudul.setText(promoList.get(position).getDeskripsi());
+        holder.promoDeskripsi.setText(promoList.get(position).getDeskripsi());
+        holder.promoJudul.setText(promoList.get(position).getJudul());
         Glide.with(holder.itemView.getContext())
                 .load(Config.IMAGES_URL + promoList.get(position).getGambar())
                 .apply(new RequestOptions().override(350, 550))
