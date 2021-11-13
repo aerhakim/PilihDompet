@@ -234,17 +234,19 @@
                             android:textSize="@dimen/_12ssp"
                             tools:ignore="MissingPrefix" />
 
-                        <TextView
+                        <androidx.appcompat.widget.AppCompatRatingBar
                             android:id="@+id/etRating"
-                            fontPath="@string/font_bold"
+                            style="@style/Base.Widget.AppCompat.RatingBar.Small"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_gravity="end"
                             android:layout_marginEnd="@dimen/_5sdp"
                             android:textSize="@dimen/_12ssp"
-                            tools:ignore="MissingPrefix"
-                            tools:text="4,3" />
+                            android:numStars="5"
+                            android:theme="@style/RatingBar"
+                            android:stepSize="0.1"
+                            android:rating="4" />
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatRatingBar;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -45,7 +46,7 @@ public class WalletAdapter extends RecyclerView.Adapter<WalletAdapter.ViewHolder
         holder.appName.setText(ewalletList.get(position).getNama());
         holder.appFee.setText(ewalletList.get(position).getFeetrx());
         holder.appDetail.setText(ewalletList.get(position).getDetail());
-        holder.appRating.setText(ewalletList.get(position).getRating());
+        holder.appRating.setRating(ewalletList.get(position).getRating());
         holder.appSize.setText(ewalletList.get(position).getSize());
         Glide.with(holder.itemView.getContext())
                 .load(Config.IMAGES_URL + ewalletList.get(position).getGambar())
@@ -75,8 +76,9 @@ public class WalletAdapter extends RecyclerView.Adapter<WalletAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView appName,appFee, appSize, appRating, appDetail;
+        TextView appName,appFee, appSize, appDetail;
         ImageView appGambar;
+        AppCompatRatingBar appRating;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             appSize=itemView.findViewById(R.id.etSize);

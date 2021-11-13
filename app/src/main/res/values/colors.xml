@@ -12,5 +12,6 @@
     <color name="colorGreySoft">#BCBEC1</color>
     <color name="putih">#E6E6E6</color>
     <color name="trans_black">#3C000000</color>
-
+    <color name="colorGold">#FFD700</color>
+    <color name="colorGoldTrans">#DFFFD700</color>
 </resources>

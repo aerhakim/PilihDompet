@@ -19,4 +19,8 @@
     </style>
     <style name="Theme.PilihDompet.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.PilihDompet.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/colorGoldTrans</item>
+        <item name="colorControlActivated">@color/colorGold</item>
+    </style>
 </resources>

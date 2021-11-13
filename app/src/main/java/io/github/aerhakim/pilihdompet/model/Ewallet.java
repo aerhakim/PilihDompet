@@ -3,9 +3,10 @@ package io.github.aerhakim.pilihdompet.model;
 public class Ewallet {
 
     int id;
-    String nama,feetrx, size, gambar, rating, detail;
+    String nama,feetrx, size, gambar, detail;
+    float rating;
 
-    public Ewallet(int id, String nama, String detail, String feetrx, String size, String gambar, String rating) {
+    public Ewallet(int id, String nama, String detail, String feetrx, String size, String gambar, float rating) {
         this.id = id;
         this.nama = nama;
         this.feetrx = feetrx;
@@ -55,11 +56,11 @@ public class Ewallet {
         this.gambar = gambar;
     }
 
-    public String getRating() {
+    public float getRating() {
         return rating;
     }
 
-    public void setRating(String rating) {
+    public void setRating(float rating) {
         this.rating = rating;
     }
 

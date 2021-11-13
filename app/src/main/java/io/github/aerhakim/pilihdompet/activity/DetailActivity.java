@@ -1,6 +1,7 @@
 package io.github.aerhakim.pilihdompet.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatRatingBar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,9 +17,10 @@ import io.github.aerhakim.pilihdompet.Rest.ApiDetail;
 import io.github.aerhakim.pilihdompet.Rest.Config;
 
 public class DetailActivity extends AppCompatActivity {
-    TextView appName,appFee, appSize, appRating, appDetail;
+    TextView appName,appFee, appSize, appDetail;
     ImageView appGambar;
     Api mApiInterface;
+    AppCompatRatingBar appRating;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +31,7 @@ public class DetailActivity extends AppCompatActivity {
         appName = (TextView) findViewById(R.id.tvJudul);
         appFee = (TextView) findViewById(R.id.etFeetrx);
         appDetail = (TextView) findViewById(R.id.etDetail);
-        appRating = (TextView) findViewById(R.id.etRating);
+        appRating = (AppCompatRatingBar) findViewById(R.id.etRating);
 
         // Identifikasi intent ke Komponen Form
         Intent mIntent = getIntent();
@@ -37,7 +39,7 @@ public class DetailActivity extends AppCompatActivity {
         appName.setText(mIntent.getStringExtra("nama"));
         appFee.setText(mIntent.getStringExtra("feetrx"));
         appDetail.setText(mIntent.getStringExtra("detail"));
-        appRating.setText(mIntent.getStringExtra("rating"));
+        appRating.setRating(mIntent.getFloatExtra("rating", 0.0f));
 
         // Masukan Gambar Ke Image View Gunakan Glide
         Glide.with(DetailActivity.this)
