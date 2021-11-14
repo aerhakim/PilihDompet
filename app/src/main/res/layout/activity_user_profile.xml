@@ -90,6 +90,7 @@
             android:paddingStart="@dimen/_10sdp"
             android:paddingEnd="1dp"
             android:hint="Email Address"
+            android:editable="false"
             android:textSize="@dimen/_12ssp"
             android:textAlignment="viewStart"
             android:gravity="start|center_vertical"

@@ -15,15 +15,18 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent" />
 
-        <ImageView
+        <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/ivGambar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/trans_black"
             android:backgroundTint="@color/white"
-            android:src="@drawable/icon1" />
+            android:src="@drawable/icon1"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            app:riv_corner_radius="@dimen/_8sdp" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"

@@ -152,15 +152,12 @@
                 tools:ignore="MissingPrefix" />
 
 
-
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:orientation="vertical"
-                android:gravity="center_horizontal">
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
 
                 <TextView
                     fontPath="@string/font_medium"
@@ -176,11 +173,12 @@
                 <TextView
                     android:id="@+id/tvSignup"
                     fontPath="@string/font_bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
                     android:onClick="onClick"
+                    android:gravity="center_horizontal"
                     android:text="@string/sign_up_btn"
                     android:textColor="@color/colorPrimary"
                     android:textSize="@dimen/_11ssp"

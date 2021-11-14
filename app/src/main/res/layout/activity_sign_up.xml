@@ -144,35 +144,6 @@
             android:textSize="@dimen/_12ssp"
             tools:ignore="MissingPrefix" />
 
-        <LinearLayout
-            android:id="@+id/llCheck"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_28sdp"
-            android:layout_below="@+id/tvForgetPassword"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:layout_marginEnd="@dimen/_10sdp"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/cbCheck"
-                android:layout_width="@dimen/_25sdp"
-                android:layout_height="@dimen/_25sdp"
-                android:buttonTint="@color/black"
-                android:gravity="center" />
-
-            <TextView
-                android:id="@+id/tvTermsAndCondition"
-                fontPath="@string/font_medium"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:gravity="start|center_vertical"
-                android:text="@string/i_accept_the_terms_amp_conditions"
-                android:textAlignment="viewStart"
-                android:textColor="@color/black"
-                tools:ignore="MissingPrefix" />
-        </LinearLayout>
 
 
         <TextView
@@ -180,7 +151,7 @@
             fontPath="@string/font_bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/llCheck"
+            android:layout_below="@id/tvForgetPassword"
             android:layout_alignParentEnd="true"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10sdp"
@@ -216,12 +187,13 @@
             <TextView
                 android:id="@+id/tvLogin"
                 fontPath="@string/font_bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:onClick="onClick"
                 android:text="@string/btn_login"
+                android:gravity="center_horizontal"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/_11ssp"
                 tools:ignore="MissingPrefix" />

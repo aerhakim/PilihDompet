@@ -15,7 +15,7 @@ import com.bumptech.glide.request.RequestOptions;
 import java.util.List;
 import io.github.aerhakim.pilihdompet.R;
 import io.github.aerhakim.pilihdompet.Rest.Config;
-import io.github.aerhakim.pilihdompet.activity.DetailPromoActivity;
+import io.github.aerhakim.pilihdompet.activity.DetailEwalletActivity;
 import io.github.aerhakim.pilihdompet.model.Promo;
 
 
@@ -52,7 +52,7 @@ public class PromoAdapter extends RecyclerView.Adapter<PromoAdapter.ViewHolder> 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mIntent = new Intent(view.getContext(), DetailPromoActivity.class);
+                Intent mIntent = new Intent(view.getContext(), DetailEwalletActivity.class);
                 mIntent.putExtra("judul", promoList.get(position).getJudul());
                 mIntent.putExtra("snk", promoList.get(position).getSnk());
                 mIntent.putExtra("user", promoList.get(position).getUser());

@@ -10,10 +10,26 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="10dp"
         android:orientation="vertical">
+
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_65sdp"
+            app:mrl_rippleAlpha="0.2"
+            app:mrl_rippleColor="@color/abuabu"
+            app:mrl_rippleHover="true"
+            app:mrl_rippleOverlay="true">
+
+            <Button
+                android:id="@+id/changeProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:visibility="visible" />
+        </com.balysv.materialripple.MaterialRippleLayout>
 
         <RelativeLayout
             android:id="@+id/btn_edit"
@@ -42,7 +58,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:text="Nama"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
                     android:textSize="18sp" />
 
@@ -50,16 +65,12 @@
                     android:id="@+id/profileEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/profileName"
-                    android:layout_marginBottom="6dp"
-                    android:text="nama@email.com" />
+                    android:layout_below="@+id/profileName" />
                 <TextView
                     android:id="@+id/profilePhone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/profileEmail"
-                    android:layout_marginBottom="6dp"
-                    android:text="arhakim.info@gmail.com"
                     android:visibility="gone"/>
 
             </RelativeLayout>
@@ -70,23 +81,36 @@
     </RelativeLayout>
 
 
-    <com.balysv.materialripple.MaterialRippleLayout
-        android:id="@+id/btn_rate"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:mrl_rippleAlpha="0.2"
-        app:mrl_rippleColor="@color/abuabu"
-        app:mrl_rippleHover="true"
-        app:mrl_rippleOverlay="true">
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_65sdp"
+            app:mrl_rippleAlpha="0.2"
+            app:mrl_rippleColor="@color/abuabu"
+            app:mrl_rippleHover="true"
+            app:mrl_rippleOverlay="true">
+
+            <Button
+                android:id="@+id/resetPasswordLocal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:visibility="visible" />
+        </com.balysv.materialripple.MaterialRippleLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
             android:paddingLeft="20dp"
-            android:paddingRight="20dp">
+            android:paddingTop="16dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="16dp">
 
             <ImageView
                 android:layout_width="28dp"
@@ -98,8 +122,8 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
                 android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -118,12 +142,12 @@
 
         </LinearLayout>
 
-    </com.balysv.materialripple.MaterialRippleLayout>
+    </RelativeLayout>
 
     <com.balysv.materialripple.MaterialRippleLayout
         android:id="@+id/btn_more"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_65sdp"
         app:mrl_rippleAlpha="0.2"
         app:mrl_rippleColor="@color/abuabu"
         app:mrl_rippleHover="true"
@@ -173,7 +197,7 @@
     <com.balysv.materialripple.MaterialRippleLayout
         android:id="@+id/btn_about"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_65sdp"
         app:mrl_rippleAlpha="0.2"
         app:mrl_rippleColor="@color/abuabu"
         app:mrl_rippleHover="true"
@@ -250,57 +274,26 @@
         android:layout_gravity="center"
         android:visibility="gone"
         android:background="@drawable/bg_corner" />
-    <Button
-        android:id="@+id/resetPasswordLocal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Reset Password"
-        android:textColor="@color/white"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="@dimen/_20sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
-        android:layout_gravity="center"
-        android:visibility="visible"
-        android:background="@drawable/bg_corner" />
-
-    <Button
-        android:id="@+id/changeProfile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Change Profile"
-        android:textColor="@color/white"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="@dimen/_20sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
-        android:layout_gravity="center"
-        android:visibility="visible"
-        android:background="@drawable/bg_corner" />
 
 
-    <com.balysv.materialripple.MaterialRippleLayout
-        android:id="@+id/btn_logout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/_20sdp"
-        android:layout_marginLeft="@dimen/_20sdp"
-        app:mrl_rippleAlpha="0.2"
-        app:mrl_rippleColor="@color/abuabu"
-        app:mrl_rippleHover="true"
-        android:layout_alignParentBottom="true"
-        app:mrl_rippleOverlay="true">
+
+
+
 
         <Button
             android:id="@+id/btn_signout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
             android:background="@drawable/bg_corner"
             android:text="Log Out"
             android:onClick="logout"
             android:textColor="@color/white"
+            android:layout_alignParentBottom="true"
             android:textStyle="bold" />
 
-    </com.balysv.materialripple.MaterialRippleLayout>
 
 
     <ProgressBar
