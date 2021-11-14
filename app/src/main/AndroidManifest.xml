@@ -14,7 +14,10 @@
         android:theme="@style/Theme.PilihDompet"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activity.DetailActivity"
+            android:name=".activity.DetailPromoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.DetailEwalletActivity"
             android:exported="false" />
         <activity
             android:name=".user.UserProfileActivity"
@@ -30,9 +33,7 @@
             android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
-            android:exported="true">
-        </activity>
-
+            android:exported="true"></activity>
         <activity
             android:name=".activity.SplashScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -43,7 +44,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activity.OnBoardingActivity"
             android:exported="true" />

@@ -20,7 +20,7 @@ import java.util.List;
 
 import io.github.aerhakim.pilihdompet.R;
 import io.github.aerhakim.pilihdompet.Rest.Config;
-import io.github.aerhakim.pilihdompet.activity.DetailActivity;
+import io.github.aerhakim.pilihdompet.activity.DetailEwalletActivity;
 import io.github.aerhakim.pilihdompet.model.Ewallet;
 
 public class WalletAdapter extends RecyclerView.Adapter<WalletAdapter.ViewHolder> {
@@ -55,7 +55,7 @@ public class WalletAdapter extends RecyclerView.Adapter<WalletAdapter.ViewHolder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mIntent = new Intent(view.getContext(), DetailActivity.class);
+                Intent mIntent = new Intent(view.getContext(), DetailEwalletActivity.class);
                 mIntent.putExtra("Id", ewalletList.get(position).getId());
                 mIntent.putExtra("nama", ewalletList.get(position).getNama());
                 mIntent.putExtra("feetrx", ewalletList.get(position).getFeetrx());

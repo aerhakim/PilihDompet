@@ -16,7 +16,7 @@ import io.github.aerhakim.pilihdompet.Rest.Api;
 import io.github.aerhakim.pilihdompet.Rest.ApiDetail;
 import io.github.aerhakim.pilihdompet.Rest.Config;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailEwalletActivity extends AppCompatActivity {
     TextView appName,appFee, appSize, appDetail;
     ImageView appGambar;
     Api mApiInterface;
@@ -42,7 +42,7 @@ public class DetailActivity extends AppCompatActivity {
         appRating.setRating(mIntent.getFloatExtra("rating", 0.0f));
 
         // Masukan Gambar Ke Image View Gunakan Glide
-        Glide.with(DetailActivity.this)
+        Glide.with(DetailEwalletActivity.this)
                 .load(Config.IMAGES_URL + mIntent.getStringExtra("gambar"))
                 .apply(new RequestOptions().override(350, 550))
                 .into(appGambar);

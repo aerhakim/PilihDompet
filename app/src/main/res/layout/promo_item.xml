@@ -71,7 +71,50 @@
 
         </RelativeLayout>
 
-
+        <TextView
+            android:id="@+id/promoSNK"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="start"
+            android:text="Contoh Deskripsi"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            tools:ignore="MissingPrefix" />
+        <TextView
+            android:id="@+id/promoUser"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="start"
+            android:text="Contoh Deskripsi"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            tools:ignore="MissingPrefix" />
+        <TextView
+            android:id="@+id/promoEwallet"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="start"
+            android:text="Contoh Deskripsi"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            tools:ignore="MissingPrefix" />
+        <TextView
+            android:id="@+id/promoTglend"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="start"
+            android:text="Contoh Deskripsi"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            tools:ignore="MissingPrefix" />
 
     </RelativeLayout>
 

@@ -116,9 +116,9 @@
                             android:gravity="start"
                             android:text="Info E-Wallet"
                             android:textAlignment="viewStart"
-                            android:textStyle="bold"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold"
                             tools:ignore="MissingPrefix" />
 
                     </RelativeLayout>
@@ -242,11 +242,11 @@
                             android:layout_alignParentEnd="true"
                             android:layout_gravity="end"
                             android:layout_marginEnd="@dimen/_5sdp"
-                            android:textSize="@dimen/_12ssp"
                             android:numStars="5"
-                            android:theme="@style/RatingBar"
+                            android:rating="4"
                             android:stepSize="0.1"
-                            android:rating="4" />
+                            android:textSize="@dimen/_12ssp"
+                            android:theme="@style/RatingBar" />
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -272,10 +272,10 @@
                         android:layout_height="wrap_content"
                         android:gravity="start"
                         android:text="Detail"
-                        android:textStyle="bold"
                         android:textAlignment="viewStart"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
                         tools:ignore="MissingPrefix" />
 
 
