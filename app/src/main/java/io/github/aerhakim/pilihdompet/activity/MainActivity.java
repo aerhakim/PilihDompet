@@ -3,11 +3,13 @@ package io.github.aerhakim.pilihdompet.activity;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,6 +31,7 @@ import io.github.aerhakim.pilihdompet.fragment.HomeFragment;
 import io.github.aerhakim.pilihdompet.fragment.PromoFragment;
 import io.github.aerhakim.pilihdompet.fragment.WishlistFragment;
 import io.github.aerhakim.pilihdompet.model.GetToken;
+import io.github.aerhakim.pilihdompet.user.UserProfileActivity;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -53,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setOffscreenPageLimit(pager_number);
         createNotificationChannel();
         getToken();
+
         navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
@@ -71,8 +75,15 @@ public class MainActivity extends AppCompatActivity {
             }
             return false;
         });
-
     }
+
+    public void selectFragment(int position){
+        viewPager.setCurrentItem(position, true);
+        viewPager.dispatchSetSelected(true);
+    }
+
+
+
 
     private void getToken() {
         FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
