@@ -15,5 +15,3 @@ https://user-images.githubusercontent.com/79903756/142949032-e138e718-2699-4e4a-
 ![Flow Chart](https://i.postimg.cc/1tMGsWYZ/Flowchart.png)
 
 
-© aerhakim 2021 (Designed and developed by AR Hakim)
-
