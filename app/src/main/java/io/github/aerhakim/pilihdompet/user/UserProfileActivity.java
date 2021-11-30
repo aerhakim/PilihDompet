@@ -124,6 +124,16 @@ public class UserProfileActivity extends AppCompatActivity {
         profilePhone.setText(phone);
 
         Log.d(TAG, "onCreate: " + fullName + " " + email + " " + phone);
+
+        ImageView ivBack=findViewById(R.id.ivBack);
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), SettingActivity.class);
+                startActivity(i);
+
+            }
+        });
     }
 
 

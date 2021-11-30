@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,7 +30,9 @@ import javax.annotation.Nullable;
 
 import io.github.aerhakim.pilihdompet.R;
 
+import io.github.aerhakim.pilihdompet.activity.MainActivity;
 import io.github.aerhakim.pilihdompet.activity.SettingActivity;
+import io.github.aerhakim.pilihdompet.user.UserProfileActivity;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
@@ -38,7 +41,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     FirebaseUser user;
     String userId;
     StorageReference storageReference;
-    ImageView profileImage;
+    ImageView profileImage, imagePromo;
     TextView fullName;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,6 +55,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         userId = fAuth.getCurrentUser().getUid();
         user = fAuth.getCurrentUser();
         profileImage=view.findViewById(R.id.imageProfile);
+        imagePromo=view.findViewById(R.id.ivPromo);
         storageReference = FirebaseStorage.getInstance().getReference();
 
         StorageReference profileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
@@ -72,6 +76,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                     Log.d("tag", "onEvent: Document do not exists");
                 }
             }
+        });
+
+
+        ImageView imagePromo = view.findViewById(R.id.ivPromo);
+        imagePromo.setOnClickListener(view1 -> {
+            ((MainActivity)getActivity()).viewPager.setCurrentItem(2);
         });
 
         return view;

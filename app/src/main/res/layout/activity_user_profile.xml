@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:id="@+id/rlEditProfile">
+
         <ImageView
             android:id="@+id/ivBack"
             android:layout_width="@dimen/_35sdp"
@@ -86,7 +87,7 @@
             android:background="@drawable/bg_onlycorner_gary"
             android:id="@+id/profileEmailAddress"
             fontPath="@string/font_medium"
-            android:textColor="@color/black"
+            android:textColor="@color/strock_gray"
             android:paddingStart="@dimen/_10sdp"
             android:paddingEnd="1dp"
             android:hint="Email Address"
@@ -113,6 +114,7 @@
             android:hint="Phone Number"
             android:textSize="@dimen/_12ssp"
             android:textAlignment="viewStart"
+            android:inputType="phone"
             android:gravity="start|center_vertical"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"

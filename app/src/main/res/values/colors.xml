@@ -14,4 +14,5 @@
     <color name="trans_black">#3C000000</color>
     <color name="colorGold">#FFD700</color>
     <color name="colorGoldTrans">#DFFFD700</color>
+    <color name="colorgradient">#0A3556</color>
 </resources>
