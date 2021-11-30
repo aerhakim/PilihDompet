@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -40,14 +41,15 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "PushNotification";
     private static final String CHANNEL_ID = "101";
-    private BottomNavigationView navigation;
-    private ViewPager viewPager;
+    public BottomNavigationView navigation;
+    public ViewPager viewPager;
+    MenuItem prevMenuItem;
     int pager_number = 4;
     View view;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         view = findViewById(android.R.id.content);
@@ -56,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setOffscreenPageLimit(pager_number);
         createNotificationChannel();
         getToken();
-
         navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
@@ -75,14 +76,29 @@ public class MainActivity extends AppCompatActivity {
             }
             return false;
         });
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
+            @Override
+            public void onPageSelected(int position) {
+                if (prevMenuItem != null) {
+                    prevMenuItem.setChecked(false);
+                } else {
+                    navigation.getMenu().getItem(0).setChecked(false);
+                }
+                navigation.getMenu().getItem(position).setChecked(true);
+                prevMenuItem = navigation.getMenu().getItem(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
     }
-
-    public void selectFragment(int position){
-        viewPager.setCurrentItem(position, true);
-        viewPager.dispatchSetSelected(true);
-    }
-
-
 
 
     private void getToken() {
