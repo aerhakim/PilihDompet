@@ -6,16 +6,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.ContentResolver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
-import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -33,13 +33,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 import javax.annotation.Nullable;
 
 import io.github.aerhakim.pilihdompet.R;
-import io.github.aerhakim.pilihdompet.user.UserProfileActivity;
 
 public class SettingActivity extends AppCompatActivity {
     private static final int GALLERY_INTENT_CODE = 1023 ;
@@ -185,10 +183,55 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
+        cekKoneksi();
 
     }
 
 
+            //CEK KONEKSI
+
+    public void cekKoneksi () {
+        if(isNetworkAvailable()) {
+            //Keknya ga ush di isi, dibiarin aja
+        } else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setCancelable(false);
+            builder.setTitle("Tidak ada Koneksi Internet!");
+            builder.setMessage("Silahkan Periksa Koneksi Internet Anda dan Coba Kembali!");
+            builder.setNegativeButton("Retry", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+//                    if (Build.VERSION.SDK_INT >= 11) {
+//                        recreate();
+//                    }else{
+                    Intent j = getIntent();
+                    finish();
+                    startActivity(j);
+//                    }
+                }
+            });
+
+            builder.setPositiveButton("Connect", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+                }
+            });
+
+            AlertDialog dialog  = builder.create();
+            dialog.show();
+
+        }
+    }
+
+
+    public boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+
+    }
 
 
     public void logout(View view) {

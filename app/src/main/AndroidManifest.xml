@@ -14,13 +14,10 @@
         android:theme="@style/Theme.PilihDompet"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activity.DetailPromoActivity"
-            android:exported="false" />
-        <activity
             android:name=".activity.DetailEwalletActivity"
             android:exported="false" />
         <activity
-            android:name=".user.UserProfileActivity"
+            android:name=".activity.UserProfileActivity"
             android:exported="false" />
         <activity
             android:name=".activity.SettingActivity"

@@ -1,4 +1,4 @@
-package io.github.aerhakim.pilihdompet.Rest;
+package io.github.aerhakim.pilihdompet.rest;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

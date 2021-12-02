@@ -12,9 +12,9 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 import io.github.aerhakim.pilihdompet.R;
-import io.github.aerhakim.pilihdompet.Rest.Api;
-import io.github.aerhakim.pilihdompet.Rest.ApiDetail;
-import io.github.aerhakim.pilihdompet.Rest.Config;
+import io.github.aerhakim.pilihdompet.rest.Api;
+import io.github.aerhakim.pilihdompet.rest.ApiDetail;
+import io.github.aerhakim.pilihdompet.rest.Config;
 
 public class DetailEwalletActivity extends AppCompatActivity {
     TextView appName,appFee, appSize, appDetail;

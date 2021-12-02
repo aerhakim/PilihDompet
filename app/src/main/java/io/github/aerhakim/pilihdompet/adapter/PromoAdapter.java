@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import java.util.List;
 import io.github.aerhakim.pilihdompet.R;
-import io.github.aerhakim.pilihdompet.Rest.Config;
+import io.github.aerhakim.pilihdompet.rest.Config;
 import io.github.aerhakim.pilihdompet.activity.DetailEwalletActivity;
 import io.github.aerhakim.pilihdompet.model.Promo;
 

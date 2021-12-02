@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -32,7 +31,6 @@ import io.github.aerhakim.pilihdompet.R;
 
 import io.github.aerhakim.pilihdompet.activity.MainActivity;
 import io.github.aerhakim.pilihdompet.activity.SettingActivity;
-import io.github.aerhakim.pilihdompet.user.UserProfileActivity;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {

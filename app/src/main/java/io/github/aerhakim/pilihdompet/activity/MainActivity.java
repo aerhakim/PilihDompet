@@ -1,7 +1,6 @@
 package io.github.aerhakim.pilihdompet.activity;
 
 
-import android.app.Activity;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
@@ -16,8 +15,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,7 +23,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -35,13 +31,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import io.github.aerhakim.pilihdompet.R;
-import io.github.aerhakim.pilihdompet.Rest.Config;
+import io.github.aerhakim.pilihdompet.rest.Config;
 import io.github.aerhakim.pilihdompet.fragment.EwalletFragment;
 import io.github.aerhakim.pilihdompet.fragment.HomeFragment;
 import io.github.aerhakim.pilihdompet.fragment.PromoFragment;
 import io.github.aerhakim.pilihdompet.fragment.WishlistFragment;
 import io.github.aerhakim.pilihdompet.model.GetToken;
-import io.github.aerhakim.pilihdompet.activity.CekKoneksi;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -121,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
             builder.setCancelable(false);
             builder.setTitle("Tidak ada Koneksi Internet!");
             builder.setMessage("Silahkan Periksa Koneksi Internet Anda dan Coba Kembali!");
-//            builder.setView(getLayoutInflater().inflate(R.layout.custom_dialog, null));
             builder.setNegativeButton("Retry", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
