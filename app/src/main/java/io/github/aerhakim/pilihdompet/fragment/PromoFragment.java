@@ -66,8 +66,9 @@ public class PromoFragment extends Fragment {
 
             @Override
             public void onFailure(Call<GetPromo> call, Throwable t) {
-
-                Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_SHORT).show();
+                //onFailure Retrofit di PromoFragment Toast Nya tidak diaktifkan,
+                // karena di Mainactivity sudah ada toast yg sama di E-Wallet Fragment
+//                Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 

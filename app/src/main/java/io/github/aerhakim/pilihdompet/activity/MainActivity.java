@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
             builder.setCancelable(false);
             builder.setTitle("Tidak ada Koneksi Internet!");
             builder.setMessage("Silahkan Periksa Koneksi Internet Anda dan Coba Kembali!");
-
+//            builder.setView(getLayoutInflater().inflate(R.layout.custom_dialog, null));
             builder.setNegativeButton("Retry", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
@@ -186,7 +186,9 @@ public class MainActivity extends AppCompatActivity {
                                  @Override
                                  public void onFailure(Call<GetToken> call, Throwable t) {
 
-                                     Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                                     //onFailure Retrofit di MainActivity Toast Nya tidak diaktifkan,
+                                     // karena di Mainactivity sudah ada toast yg sama di E-Wallet Fragment
+//                                     Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                                  }
                              });
             }

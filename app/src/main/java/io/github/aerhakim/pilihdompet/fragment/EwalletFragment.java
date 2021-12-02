@@ -70,8 +70,7 @@ public class EwalletFragment extends Fragment {
 
             @Override
             public void onFailure(Call<GetEwallet> call, Throwable t) {
-
-                Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),"Silahkan Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
             }
         });
 
