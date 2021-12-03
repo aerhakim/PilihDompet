@@ -23,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.balysv.materialripple.MaterialRippleLayout;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -52,6 +53,7 @@ public class SettingActivity extends AppCompatActivity {
     ImageView profileImage;
     SwipeRefreshLayout refreshLayout;
     StorageReference storageReference;
+    MaterialRippleLayout anu;
 
 
     @Override
@@ -63,7 +65,7 @@ public class SettingActivity extends AppCompatActivity {
         email    = findViewById(R.id.profileEmail);
         resetPassLocal = findViewById(R.id.resetPasswordLocal);
         refreshLayout = findViewById(R.id.swipe_refresh_layout_setting);
-
+        anu = findViewById(R.id.btn_verifikasi);
         profileImage = findViewById(R.id.profileImage);
         changeProfileImage = findViewById(R.id.changeProfile);
 
@@ -90,6 +92,7 @@ public class SettingActivity extends AppCompatActivity {
         if(!user.isEmailVerified()){
             verifyMsg.setVisibility(View.VISIBLE);
             resendCode.setVisibility(View.VISIBLE);
+            anu.setVisibility(View.VISIBLE);
 
             resendCode.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -189,6 +192,7 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onRefresh() {
                 Intent j = getIntent();
+                j.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 finish();
                 startActivity(j);
             }
@@ -206,7 +210,7 @@ public class SettingActivity extends AppCompatActivity {
             //Keknya ga ush di isi, dibiarin aja
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setCancelable(false);
+            builder.setCancelable(true);
             builder.setTitle("Tidak ada Koneksi Internet!");
             builder.setMessage("Silahkan Periksa Koneksi Internet Anda dan Coba Kembali!");
             builder.setNegativeButton("Retry", new DialogInterface.OnClickListener() {
@@ -216,6 +220,7 @@ public class SettingActivity extends AppCompatActivity {
 //                        recreate();
 //                    }else{
                     Intent j = getIntent();
+                    j.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     finish();
                     startActivity(j);
 //                    }

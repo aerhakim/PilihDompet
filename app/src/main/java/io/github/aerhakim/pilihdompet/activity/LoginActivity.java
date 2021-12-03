@@ -151,7 +151,8 @@ public class LoginActivity extends AppCompatActivity {
         refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                Intent j = getIntent();
+                Intent j = new Intent(LoginActivity.this, LoginActivity.class);
+                j.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 finish();
                 startActivity(j);
             }
@@ -164,7 +165,7 @@ public class LoginActivity extends AppCompatActivity {
             //Keknya ga ush di isi, dibiarin aja
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setCancelable(false);
+            builder.setCancelable(true);
             builder.setTitle("Tidak ada Koneksi Internet!");
             builder.setMessage("Silahkan Periksa Koneksi Internet Anda dan Coba Kembali!");
             builder.setNegativeButton("Retry", new DialogInterface.OnClickListener() {
@@ -173,7 +174,8 @@ public class LoginActivity extends AppCompatActivity {
 //                    if (Build.VERSION.SDK_INT >= 11) {
 //                        recreate();
 //                    }else{
-                    Intent j = getIntent();
+                    Intent j = new Intent(LoginActivity.this, LoginActivity.class);
+                    j.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     finish();
                     startActivity(j);
 //                    }

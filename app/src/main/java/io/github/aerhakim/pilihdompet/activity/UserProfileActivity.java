@@ -150,7 +150,7 @@ public class UserProfileActivity extends AppCompatActivity {
             //Keknya ga ush di isi, dibiarin aja
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setCancelable(false);
+            builder.setCancelable(true);
             builder.setTitle("Tidak ada Koneksi Internet!");
             builder.setMessage("Silahkan Periksa Koneksi Internet Anda dan Coba Kembali!");
             builder.setNegativeButton("Retry", new DialogInterface.OnClickListener() {
@@ -160,6 +160,7 @@ public class UserProfileActivity extends AppCompatActivity {
 //                        recreate();
 //                    }else{
                     Intent j = getIntent();
+                    j.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     finish();
                     startActivity(j);
 //                    }
