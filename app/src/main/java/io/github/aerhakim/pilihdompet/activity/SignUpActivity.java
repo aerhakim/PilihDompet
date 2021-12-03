@@ -19,6 +19,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -43,6 +44,7 @@ public class SignUpActivity extends AppCompatActivity {
     ProgressBar progressBar;
     FirebaseFirestore fStore;
     String userID;
+    SwipeRefreshLayout refreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class SignUpActivity extends AppCompatActivity {
         mFullName   = findViewById(R.id.edFullName);
         mEmail      = findViewById(R.id.edEmail);
         mPassword   = findViewById(R.id.edPassword);
+        refreshLayout = findViewById(R.id.swipe_refresh_layout_signup);
         mPhone      = findViewById(R.id.edPhone);
         mRegisterBtn= findViewById(R.id.tvSignup);
         mLoginBtn   = findViewById(R.id.tvLogin);
@@ -190,7 +193,14 @@ public class SignUpActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),LoginActivity.class));
             }
         });
-
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                Intent j = getIntent();
+                finish();
+                startActivity(j);
+            }
+        });
         cekKoneksi();
     }
 

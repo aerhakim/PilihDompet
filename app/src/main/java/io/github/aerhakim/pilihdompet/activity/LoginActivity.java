@@ -19,6 +19,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -34,13 +35,14 @@ public class LoginActivity extends AppCompatActivity {
     TextView mCreateBtn,forgotTextLink, mLoginBtn;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
+    SwipeRefreshLayout refreshLayout;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        refreshLayout = findViewById(R.id.swipe_refresh_layout_signin);
         mEmail = findViewById(R.id.edEmail);
         mPassword = findViewById(R.id.edPassword);
         progressBar = findViewById(R.id.progressBar);
@@ -146,7 +148,14 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                Intent j = getIntent();
+                finish();
+                startActivity(j);
+            }
+        });
         cekKoneksi();
     }
 

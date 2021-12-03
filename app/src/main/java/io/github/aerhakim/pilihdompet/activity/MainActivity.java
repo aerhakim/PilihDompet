@@ -23,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     public ViewPager viewPager;
     MenuItem prevMenuItem;
     int pager_number = 4;
+    SwipeRefreshLayout refreshLayout;
     View view;
 
 
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         view = findViewById(android.R.id.content);
         viewPager = findViewById(R.id.viewpager);
+        refreshLayout = findViewById(R.id.swipe_refresh_layout_main);
         viewPager.setAdapter(new MyAdapter(getSupportFragmentManager()));
         viewPager.setOffscreenPageLimit(pager_number);
         createNotificationChannel();
@@ -104,7 +107,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                Intent j = getIntent();
+                finish();
+                startActivity(j);
+            }
+        });
         cekKoneksi();
     }
 
@@ -235,7 +245,6 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-
 
 
 }

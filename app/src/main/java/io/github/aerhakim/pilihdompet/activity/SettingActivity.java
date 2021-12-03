@@ -5,6 +5,7 @@ package io.github.aerhakim.pilihdompet.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -49,6 +50,7 @@ public class SettingActivity extends AppCompatActivity {
     Button resetPassLocal,changeProfileImage;
     FirebaseUser user;
     ImageView profileImage;
+    SwipeRefreshLayout refreshLayout;
     StorageReference storageReference;
 
 
@@ -60,7 +62,7 @@ public class SettingActivity extends AppCompatActivity {
         fullName = findViewById(R.id.profileName);
         email    = findViewById(R.id.profileEmail);
         resetPassLocal = findViewById(R.id.resetPasswordLocal);
-
+        refreshLayout = findViewById(R.id.swipe_refresh_layout_setting);
 
         profileImage = findViewById(R.id.profileImage);
         changeProfileImage = findViewById(R.id.changeProfile);
@@ -180,6 +182,15 @@ public class SettingActivity extends AppCompatActivity {
                 startActivity(i);
 //
 
+            }
+        });
+
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                Intent j = getIntent();
+                finish();
+                startActivity(j);
             }
         });
 
