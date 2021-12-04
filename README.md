@@ -1,5 +1,6 @@
 # Pilih Dompet App
-![Untitled](https://user-images.githubusercontent.com/79903756/144700899-d1847b31-70c2-4d84-85a0-6e5f21d0f267.png)
+![pd](https://user-images.githubusercontent.com/79903756/144701018-0f96fe92-a624-4b90-a0e6-3ac3171be032.png)
+
 
 Pilih Dompet adalah sebuah aplikasi E-Wallet Aggregator yang masih dalam proses pengembangan yang diperuntukan sebagai tugas Final Project TP FINTECH.
 
